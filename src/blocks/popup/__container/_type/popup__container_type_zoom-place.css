@@ -1,0 +1,18 @@
+.popup__container_type_zoom-place {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  max-width: 75vw;
+  height: 75vh;
+  text-align: center;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+@media screen and (max-width:440px) {
+  .popup__container_type_zoom-place {
+    width: 100%;
+  }
+}

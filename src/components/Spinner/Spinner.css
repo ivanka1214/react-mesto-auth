@@ -1,0 +1,13 @@
+.spinner {
+    width: 150px;
+    height: 150px;
+    background-image: url(../../images/load.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    margin-left: 400px;
+    /* align-self: center;
+    justify-content: center; */
+   
+}

@@ -1,0 +1,28 @@
+.logo {
+  width: 142px;
+  height: 33px;
+}
+
+.logo:hover {
+  color: #fff;
+}
+
+@media screen and (max-width:991px) {
+  .logo {
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .logo {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .logo {
+    width: 103.74px;
+    height: 24.4px;
+    padding-left: 27px;
+  }
+}

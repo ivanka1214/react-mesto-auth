@@ -1,0 +1,17 @@
+.elements__love_active {
+  min-width: 22px;
+  height: 19px;
+  padding: 0;
+  background: url(../../../../images/love_black.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 19px 22px;
+  border: none;
+  cursor: pointer;
+  transition: none;
+}
+
+.elements__love_active:hover {
+  opacity: 1;
+}
