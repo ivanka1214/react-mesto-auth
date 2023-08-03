@@ -1,37 +1,12 @@
-import { useEffect, useState } from "react"
-import api from "../../utils/api"
+import './ButtonLike.css'
 
-export default function ButtonLike({likes,myid,cardid}) {
+export default function ButtonLike({ myid, card, onCardLike }) {
+  const isLike = card.likes.some(element => myid === element._id)
 
-const [isLike, setIsLike] = useState(false)
-const [count, setCount] = useState(likes.length) 
-
-useEffect(() => {
-    setIsLike(likes.some(element => myid === element._id))
-},[likes, myid])
-
-function handleLike() {
-    if (isLike) {
-        api.deleteLike(cardid)
-        .then(res => {
-            setIsLike(false)
-            setCount(res.likes.length)
-        })
-        .catch((error) => console.error(`ошибка ${error}`))
-    } else {
-        api.addLike(cardid)
-        .then(res => {
-            setIsLike(true)
-            setCount(res.likes.length)
-        })
-        .catch((error) => console.error(`ошибка ${error}`))
-    }
-}
-    return (
-        <>
-        <button type="button" name="button_love" className={`elements__love ${isLike ? 'elements__love_active' : ''}`} onClick={handleLike}></button>
-        <p className="elements__count">{count}</p>
-        
-        </>
-    )
+  return (
+    <>
+      <button type="button" className={`elements__like-icon ${isLike ? 'elements__like-icon_active' : ''}`} onClick={() => onCardLike(card)} />
+      <span className="elements__counter" >{card.likes.length}</span>
+    </>
+  )
 }
