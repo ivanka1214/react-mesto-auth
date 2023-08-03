@@ -17,6 +17,8 @@ import { getUserData } from '../utils/auth'
 import SendContext from '../contexts/SendContext'
 import { authorization } from "../utils/auth"
 import { auth } from '../utils/auth'
+import ProtectedHome from './ProtectedHome/ProtectedHome'
+
 
 function App() {
   const navigate = useNavigate()
@@ -215,6 +217,7 @@ function App() {
         <SendContext.Provider value={isSend}>
           <Routes>
             <Route path='/' element={<ProtectedRoute
+              element={ProtectedHome}
               dataUser={dataUser}
               openCard={handleAddPlaceClick}
               openProfile={handleEditProfileClick}

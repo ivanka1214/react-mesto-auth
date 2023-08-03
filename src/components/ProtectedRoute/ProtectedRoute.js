@@ -1,19 +1,14 @@
 import { Navigate } from "react-router-dom"
-import Main from "../Main/Main"
-import Header from "../Header/Header"
+
+// import Main from "../Main/Main"
+// import Header from "../Header/Header"
 
 
-export default function ProtectedRoute({ loggedIn, dataUser, ...props }) {
+export default function ProtectedRoute({ element: Component, loggedIn, ...props }) {
 
   return (
     loggedIn ?
-      <>
-        <Header dataUser={dataUser} />
-        <Main
-          name='main'
-          {...props}
-        />
-      </>
+    <Component {...props}/>
       : <Navigate to={'/sign-in'} replace />
   )
 }
